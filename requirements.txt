@@ -1,0 +1,6 @@
+pytest==4.0.1
+SQLAlchemy==1.2.14
+pytest-datadir>=1.2.1
+psycopg2==2.7.6.1
+docker-py==1.2.3
+alembic==1.0.3

@@ -1,0 +1,27 @@
+version: "3"
+networks:
+    postgresnet:
+
+services:
+    postgresql:  
+        image: postgres:9.6 
+        hostname: postgresql          
+        container_name: postgresql
+        environment:                                                            
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=nqueensDB    
+        networks:
+            - postgresnet
+
+    app:
+        build: .
+        hostname: nqueens_docker
+        container_name: nqueens_docker
+        command: sleep 1h
+        volumes:
+            - .:/nqueens_docker
+        depends_on:
+            - postgresql
+        networks:                                                               
+            - postgresnet    
