@@ -1,14 +1,14 @@
 FROM python:3
 
-RUN mkdir /pyemtbot
+RUN mkdir /nqueensDocker
 
-WORKDIR /pyemtbot
+WORKDIR /nqueensDocker
 
-COPY requirements.txt /pyemtbot
+COPY requirements.txt /nqueensDocker
 
 RUN pip install -r requirements.txt
 
-COPY . /pyemtbot
+COPY . /nqueensDocker
 
 CMD [ "python", "./main.py"]
 

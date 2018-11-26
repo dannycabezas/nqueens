@@ -10,7 +10,7 @@ services:
         environment:                                                            
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
-            - POSTGRES_DB=nqueensDB    
+            - POSTGRES_DB=nqueens    
         networks:
             - postgresnet
 
@@ -18,7 +18,6 @@ services:
         build: .
         hostname: nqueens_docker
         container_name: nqueens_docker
-        command: sleep 1h
         volumes:
             - .:/nqueens_docker
         depends_on:
